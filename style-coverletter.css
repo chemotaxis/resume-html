@@ -1,0 +1,81 @@
+@media print {
+    @page {
+      margin: 0px;
+    }
+}
+
+:root {
+  --font-monospace: 'Go Mono', monospace;
+  --font-main: Go, sans-serif;
+
+  /* Represents pixel values but need to be numbers for calc() to work */
+  --max-display-width: 2880;
+  --min-display-width: 816;
+  --diff-display-width: calc(
+    var(--max-display-width) - var(--min-display-width)
+  );
+
+  --font-small: calc(14px
+    + 10 * ((100vw - 816px)/var(--diff-display-width))
+  );
+
+}
+
+body.page {
+    font-family: var(--font-main);
+    font-size: 11pt;
+    display: grid;
+
+    grid-template-columns: auto 500px auto;
+    grid-template-rows: 0.5in auto;
+    grid-template-areas:
+    ". . ."
+    ". main .";
+}
+
+main {
+    grid-area: main;
+}
+
+h1 {
+    text-align: center;
+
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+
+    line-height: 1.5em;
+
+    border: calc(0.6 * var(--font-small)) solid #3eb171;
+    border-radius: 5px;
+}
+
+#info {
+  margin: 0.5em;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+div.centered {
+  margin-bottom: 2em;
+}
+
+address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-style: normal;
+}
+
+/* Don't wrap text */
+address div {
+    white-space: nowrap;
+}
+
+kbd {
+  font-family: var(--font-monospace);
+}

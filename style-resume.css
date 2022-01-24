@@ -1,0 +1,198 @@
+@media print {
+  @page {
+    margin: 0px;
+  }
+}
+
+:root {
+  --h-margin: 30px;
+  --v-margin: 24px;
+
+  /* Represents pixel values but need to be numbers for calc() to work */
+  --max-display-width: 2880;
+  --min-display-width: 816;
+  --diff-display-width: calc(
+      var(--max-display-width) - var(--min-display-width)
+    );
+
+  --font-monospace: 'Go Mono', monospace;
+  --font-main: Go, sans-serif;
+  --font-color: black;
+
+  --font-body: calc(11px
+      + 10 * ((100vw - 816px)/var(--diff-display-width))
+    );
+
+  --font-small: calc(14px
+      + 10 * ((100vw - 816px)/var(--diff-display-width))
+    );
+  --font-medium: calc(16px
+    + 10 * ((100vw - 816px)/var(--diff-display-width))
+  );
+  --font-large: calc(40px
+      + 20 * ((100vw - 816px)/var(--diff-display-width))
+    );
+}
+
+h1 {
+  font-size: var(--font-large);
+  text-align: center;
+  line-height: 1.3em;
+
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  border: calc(0.6 * var(--font-small)) solid #3eb171;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: var(--font-small);
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a, kbd {
+  white-space: nowrap;
+  font-family: var(--font-monospace);
+  color: var(--font-color);
+}
+
+body.page {
+    font-size: var(--font-body);
+    font-family: var(--font-main);
+    display: grid;
+
+    grid-template-columns: var(--h-margin) auto var(--h-margin);
+    grid-template-rows: var(--v-margin) auto var(--v-margin);
+    grid-template-areas:
+    "header header header"
+    "left-sidebar main right-sidebar"
+    ". footer .";
+}
+
+header {
+    grid-area: header;
+    margin: 10px auto;
+}
+
+header.section-header > * {
+  margin: 0px;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.justify-right {
+  text-align: right;
+}
+
+main {
+    grid-area: main;
+
+    display: grid;
+
+    grid-template-columns: 3fr 4fr;
+    column-gap: 15px;
+    row-gap: 5px;
+    grid-template-areas:
+    "top top"
+    "left right";
+}
+
+section#top {
+  grid-area: top;
+}
+
+section#left {
+  grid-area: left;
+}
+
+section#right {
+  grid-area: right;
+}
+
+address {
+    display: flex;
+    font-style: normal;
+}
+
+.border {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+ul.skills {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
+ul.skills > li {
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+ul.list-details {
+    list-style-type: none;
+    padding-left: 15px;
+    /* line-height: 85%; */
+}
+
+ul.list-details.no-indent {
+  padding-left: 0px;
+}
+
+ul.list-details > li {
+    padding-left: 4px;
+    margin: 6px auto;
+    border-left: calc(2px
+    + 2 * ((100vw - 816px)/var(--diff-display-width))
+  ) solid black;
+}
+
+/* Red line to show the bottom edge of a letter-size page */
+hr {
+  position: absolute;
+  top: 11in;
+  left: 0px;
+  border: 1px solid red;
+  width: 100vw;
+}
+
+/* Initial use was to add space between groups of divs in the skills section */
+.spaced-items {
+  display: flex;
+  gap: var(--font-body);
+}
+
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
