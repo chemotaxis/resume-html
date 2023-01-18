@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Edge: Launch resume.html",
+            "request": "launch",
+            "type": "msedge",
+            "url": "file://${workspaceFolder}/resume.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Edge: Launch cover-letter.html",
+            "request": "launch",
+            "type": "msedge",
+            "url": "file://${workspaceFolder}/cover-letter.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
             "name": "Firefox: Launch resume.html",
             "type": "firefox",
             "request": "launch",
