@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Chrome: Launch resume.html",
+            "request": "launch",
+            "type": "chrome",
+            "url": "file://${workspaceFolder}/resume.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Chrome: Launch cover-letter.html",
+            "request": "launch",
+            "type": "chrome",
+            "url": "file://${workspaceFolder}/cover-letter.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Edge: Launch resume.html",
+            "request": "launch",
+            "type": "msedge",
+            "url": "file://${workspaceFolder}/resume.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Edge: Launch cover-letter.html",
+            "request": "launch",
+            "type": "msedge",
+            "url": "file://${workspaceFolder}/cover-letter.html",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Firefox: Launch resume.html",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "reloadOnAttach": true,
+            "file": "${workspaceFolder}/resume.html"
+        },
+        {
+            "name": "Firefox: Launch cover-letter.html",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "reloadOnAttach": true,
+            "file": "${workspaceFolder}/cover-letter.html"
+        }
+    ]
+}
